@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ShreeDevelopes | Software, apps and AI automation</title>
+<meta name="description" content="ShreeDevelopes builds custom software, web and mobile apps, and AI automations for growing businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F7;--surface:#FFFFFF;--ink:#152043;--muted:#505B7A;--line:#D5DBE9;
+  --brand:#2B3FD6;--brand-ink:#FFFFFF;--gold:#F5A623;--panel:#152043;--panel-ink:#EEF1F7;
+  --f-d:'Bricolage Grotesque',system-ui,sans-serif;--f-b:'Instrument Sans',system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1530;--surface:#171F44;--ink:#EEF1F7;--muted:#A4AECF;--line:#2A3563;
+  --brand:#6F82FF;--brand-ink:#0F1530;--panel:#1D2757;--panel-ink:#EEF1F7;}}
+:root[data-theme="dark"]{--bg:#0F1530;--surface:#171F44;--ink:#EEF1F7;--muted:#A4AECF;--line:#2A3563;--brand:#6F82FF;--brand-ink:#0F1530;--panel:#1D2757;--panel-ink:#EEF1F7}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-b);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--f-d);line-height:1.08;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:800;max-width:14ch}
+h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:700;max-width:18ch}
+h3{font-size:1.35rem;font-weight:700}
+p{margin:0}
+.lead{font-size:1.2rem;color:var(--muted);max-width:52ch}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:800 1.3rem var(--f-d);text-decoration:none;letter-spacing:-.02em}
+.logo span{color:var(--brand)}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);font:600 1rem var(--f-b);padding:14px 26px;border-radius:10px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+@media(max-width:760px){nav ul{display:none}}
+.hero{padding:72px 0 88px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero .lead{margin:24px 0 32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+/* live automation demo */
+.demo{background:var(--panel);color:var(--panel-ink);border-radius:20px;padding:26px;box-shadow:0 30px 60px -30px rgba(21,32,67,.55)}
+.demo-h{display:flex;justify-content:space-between;font-size:.9rem;opacity:.8;margin-bottom:18px}
+.live{display:flex;align-items:center;gap:8px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.msgs{display:flex;flex-direction:column;gap:10px;min-height:290px}
+.m{max-width:86%;padding:11px 15px;border-radius:14px;font-size:.96rem;line-height:1.45;opacity:0;transform:translateY(8px);transition:.4s}
+.m.show{opacity:1;transform:none}
+.m.in{background:rgba(255,255,255,.1);align-self:flex-start;border-bottom-left-radius:4px}
+.m.out{background:var(--gold);color:#2a1c00;align-self:flex-end;border-bottom-right-radius:4px}
+.m.sys{align-self:center;font-size:.82rem;background:transparent;border:1px dashed rgba(255,255,255,.3);border-radius:99px;padding:6px 14px}
+.demo-f{margin-top:16px;font-size:.85rem;opacity:.7}
+/* sections */
+section{padding:92px 0}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
+.services{border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:260px 1fr auto;gap:32px;align-items:start;padding:30px 0;border-bottom:1px solid var(--line)}
+.svc p{color:var(--muted);max-width:56ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;max-width:260px}
+.tags span{font-size:.82rem;border:1px solid var(--line);border-radius:99px;padding:4px 12px;color:var(--muted)}
+@media(max-width:860px){.svc{grid-template-columns:1fr;gap:12px}.tags{justify-content:flex-start;max-width:none}}
+.band{background:var(--panel);color:var(--panel-ink)}
+.band .lead{color:#B9C2E0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;counter-reset:s}
+.step{padding:0 24px 0 0;position:relative}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--gold);color:#2a1c00;font:700 1rem var(--f-d);margin-bottom:18px}
+.step h3{margin-bottom:8px}.step p{color:#B9C2E0;font-size:.97rem}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr;gap:36px 16px}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.why dl{margin:0;display:grid;gap:26px}
+.why dt{font:700 1.15rem var(--f-d);margin-bottom:4px}
+.why dd{margin:0;color:var(--muted)}
+.stack{display:flex;flex-wrap:wrap;gap:10px;align-content:start}
+.stack span{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-weight:500}
+@media(max-width:860px){.why{grid-template-columns:1fr;gap:36px}}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);padding:28px;border-radius:16px}
+label{font-weight:600;font-size:.92rem;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:120px;resize:vertical}
+#ok{display:none;color:var(--brand);font-weight:600}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.93rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;top:-8%;right:-6%;width:620px;height:620px;max-width:90vw;background:radial-gradient(closest-side,color-mix(in srgb,var(--brand) 26%,transparent),transparent);z-index:-1;pointer-events:none}
+.btn{box-shadow:0 10px 24px -10px color-mix(in srgb,var(--brand) 70%,transparent);transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{box-shadow:none}
+.demo{border:1px solid rgba(255,255,255,.12);box-shadow:0 40px 80px -30px rgba(21,32,67,.6),inset 0 1px 0 rgba(255,255,255,.12)}
+.svc{transition:padding .25s,background .25s}
+.svc:hover{padding-left:18px;background:linear-gradient(90deg,color-mix(in srgb,var(--brand) 7%,transparent),transparent)}
+.prods{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.prod{background:var(--panel);color:var(--panel-ink);border-radius:22px;padding:34px;display:flex;flex-direction:column;gap:16px;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 60px -34px rgba(21,32,67,.6);transition:transform .3s}
+.prod:hover{transform:translateY(-6px)}
+.prod p{color:#B9C2E0}
+.pill{align-self:flex-start;font-size:.82rem;font-weight:600;background:rgba(245,166,35,.16);color:var(--gold);border:1px solid rgba(245,166,35,.4);border-radius:99px;padding:4px 12px}
+.prod .tags{justify-content:flex-start;max-width:none;margin-top:auto}
+.prod .tags span{border-color:rgba(255,255,255,.2);color:#B9C2E0}
+@media(max-width:860px){.prods{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.btn,.svc,.prod{transition:none}.btn:hover,.prod:hover{transform:none}.m{transition:none}.live i{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#top">Shree<span>Developes</span></a>
+  <nav aria-label="Main"><ul>
+    <li><a href="#services">Services</a></li><li><a href="#products">Products</a></li><li><a href="#process">How we work</a></li><li><a href="#why">Why us</a></li>
+  </ul></nav>
+  <a class="btn" href="#contact">Start a project</a>
+</div></header>
+
+<main id="top">
+<div class="wrap hero"><div class="hero-grid">
+  <div>
+    <h1>Software that does the work for you.</h1>
+    <p class="lead">ShreeDevelopes designs and builds custom software, web and mobile apps, and AI automations that save your team hours every week.</p>
+    <div class="cta"><a class="btn" href="#contact">Get a free consultation</a><a class="btn ghost" href="#services">See what we build</a></div>
+  </div>
+  <div class="demo" aria-label="Example of an AI automation answering a missed call">
+    <div class="demo-h"><span>Example automation: missed call</span><span class="live"><i></i>Running</span></div>
+    <div class="msgs" id="msgs">
+      <div class="m sys">Missed call from a new customer, 7:42 pm</div>
+      <div class="m out">Hi, sorry we missed you. What service do you need?</div>
+      <div class="m in">Need a full car detail this Saturday.</div>
+      <div class="m out">Saturday 10 am is open. Shall I book it?</div>
+      <div class="m in">Yes please.</div>
+      <div class="m sys">Booked, added to calendar, owner notified</div>
+    </div>
+    <div class="demo-f">No one on your team touched this.</div>
+  </div>
+</div></div>
+
+<section id="services" class="wrap">
+  <div class="sec-h"><h2>What we build for you</h2><p class="lead">One team from first idea to launch, and after.</p></div>
+  <div class="services">
+    <article class="svc"><h3>Custom software</h3><p>Internal tools, CRMs, dashboards and platforms shaped around how your business actually runs, not the other way round.</p><div class="tags"><span>Web apps</span><span>APIs</span><span>SaaS</span></div></article>
+    <article class="svc"><h3>Websites and mobile apps</h3><p>Fast, accessible company sites, storefronts and Android and iOS apps that look sharp and load quickly on any phone.</p><div class="tags"><span>React</span><span>Flutter</span><span>E-commerce</span></div></article>
+    <article class="svc"><h3>AI automation</h3><p>Chatbots, WhatsApp and SMS assistants, lead follow-up, document processing and reporting that run without anyone clicking a button.</p><div class="tags"><span>LLM agents</span><span>WhatsApp</span><span>Workflows</span></div></article>
+    <article class="svc"><h3>Integrations and cloud</h3><p>Connect your payments, CRM, accounting and messaging tools, and host it all securely with monitoring and backups.</p><div class="tags"><span>Payments</span><span>AWS</span><span>DevOps</span></div></article>
+    <article class="svc"><h3>Support and upgrades</h3><p>Bug fixes, new features and performance work after launch, so your product keeps improving instead of ageing.</p><div class="tags"><span>Maintenance</span><span>Audits</span></div></article>
+  </div>
+</section>
+
+<section id="products" class="wrap">
+  <div class="sec-h"><h2>Products we are building</h2><p class="lead">Our own AI products, built with the same engineering we bring to client work.</p></div>
+  <div class="prods">
+    <article class="prod"><span class="pill">In development</span><h3>CallBack AI</h3><p>An AI assistant for home service businesses like mobile detailing and lawn care. When you miss a call, it texts the customer back, answers questions and books the job.</p><div class="tags"><span>Twilio</span><span>Claude API</span><span>Next.js</span><span>Supabase</span></div></article>
+    <article class="prod"><span class="pill">In development</span><h3>PaidUp</h3><p>WhatsApp-first invoicing for Indian freelancers, agencies and small businesses. Send invoices in chat and let AI write polite, well-timed payment reminders.</p><div class="tags"><span>WhatsApp Business API</span><span>Razorpay</span><span>Claude API</span><span>Next.js</span></div></article>
+  </div>
+</section>
+
+<section id="process" class="band"><div class="wrap">
+  <h2>From idea to launch in four steps</h2>
+  <div class="steps">
+    <div class="step"><h3>Talk</h3><p>We learn your goals, users and budget, then send a clear scope and quote.</p></div>
+    <div class="step"><h3>Design</h3><p>You see screens and flows before any code is written, and sign off on them.</p></div>
+    <div class="step"><h3>Build</h3><p>We ship working versions every week so you can test and steer as we go.</p></div>
+    <div class="step"><h3>Launch and grow</h3><p>We deploy, train your team and stay on for support and new features.</p></div>
+  </div>
+</div></section>
+
+<section id="why" class="wrap"><div class="why">
+  <div><h2>Built properly, explained plainly</h2></div>
+  <dl>
+    <div><dt>Senior-level engineering</dt><dd>Clean, tested code you own fully, with documentation your next developer can read.</dd></div>
+    <div><dt>Straight communication</dt><dd>Fixed scopes, weekly demos and honest timelines. No jargon, no surprise invoices.</dd></div>
+    <div><dt>AI where it pays off</dt><dd>We suggest automation only where it saves real time or money, and say so when it won't.</dd></div>
+  </dl>
+</div>
+<div class="stack" style="margin-top:48px"><span>React</span><span>Next.js</span><span>Node.js</span><span>Python</span><span>Flutter</span><span>PostgreSQL</span><span>Twilio</span><span>WhatsApp API</span><span>OpenAI</span><span>Claude API</span><span>AWS</span><span>Docker</span></div>
+</section>
+
+<section id="contact" class="wrap"><div class="contact">
+  <div><h2>Tell us what you want to build</h2><p class="lead" style="margin-top:18px">Share a few details and we will reply within one working day with next steps.</p></div>
+  <form id="f">
+    <label>Your name<input name="name" required autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>What do you need?<select name="type"><option>Custom software</option><option>Website or mobile app</option><option>AI automation</option><option>Something else</option></select></label>
+    <label>Project details<textarea name="msg" required></textarea></label>
+    <button class="btn" type="submit">Send message</button>
+    <p id="ok" role="status">Your email app is opening with the message ready to send.</p>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>&copy; <span id="y"></span> ShreeDevelopes. All rights reserved.</span><span>hello@shreedevelopes.com</span></div></footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){
+  var el=[].slice.call(document.querySelectorAll('#msgs .m')),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce){el.forEach(function(e){e.classList.add('show')});return}
+  function run(){el.forEach(function(e){e.classList.remove('show')});
+    el.forEach(function(e,i){setTimeout(function(){e.classList.add('show')},700+i*1300)});
+    setTimeout(run,700+el.length*1300+4500)}
+  run();
+})();
+document.getElementById('f').addEventListener('submit',function(ev){
+  ev.preventDefault();var d=new FormData(ev.target);
+  var body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nService: '+d.get('type')+'\n\n'+d.get('msg');
+  document.getElementById('ok').style.display='block';
+  location.href='mailto:hello@shreedevelopes.com?subject='+encodeURIComponent('New project enquiry from '+d.get('name'))+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
